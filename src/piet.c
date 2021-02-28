@@ -27,13 +27,16 @@ GRect g_bluetooth_off_rect;
 const char* time_str(struct tm* time)
 {
     int h = time->tm_hour;
-    if (h == 0)
+    if (!clock_is_24h_style())
     {
-        h = 12;
-    }
-    else if (h > 12)
-    {
-        h -= 12;
+        if (h == 0)
+        {
+            h = 12;
+        }
+        else if (h > 12)
+        {
+            h -= 12;
+        }
     }
 
     static char buf[32];
@@ -131,7 +134,7 @@ static void tick_timer_handler(struct tm* tick_time, TimeUnits units_changed)
     GRect time_rect = layer_get_frame((Layer*) g_time_layer);
 
     int h = tick_time->tm_hour;
-    if (h > 12)
+    if (h > 12 && !clock_is_24h_style())
     {
         h -= 12;
     }
