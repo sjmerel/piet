@@ -1,0 +1,55 @@
+{
+  "name": "piet",
+  "author": "Steve Merel",
+  "version": "1.1.0",
+  "keywords": ["pebble-app"],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "Piet",
+    "uuid": "ef959e3c-9120-400f-b2ce-94b6288e764e",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": ["aplite", "basalt", "diorite", "flint" ],
+    "watchapp": {
+      "watchface": true
+    },
+    "messageKeys": [
+      "dummy"
+    ],
+    "resources": {
+      "media": [
+        {
+          "type": "png",
+          "name": "IMAGE_BACKGROUND",
+          "file": "images/background.png"
+        },
+        {
+          "type": "png",
+          "name": "IMAGE_BLUETOOTH",
+          "file": "images/bluetooth.png"
+        },
+
+        {
+          "type": "font",
+          "characterRegex": "[ A-Za-z0-9]",
+          "name": "FONT_FUTURA_22",
+          "file": "fonts/Futura-CondensedMedium.ttf"
+        },
+        {
+          "type": "font",
+          "characterRegex": "[ %+0-9]",
+          "name": "FONT_FUTURA_20",
+          "file": "fonts/Futura-CondensedMedium.ttf"
+        },
+        {
+          "type": "font",
+          "characterRegex": "[ :0-9]",
+          "name": "FONT_FUTURA_64",
+          "file": "fonts/Futura-CondensedMedium.ttf"
+        }
+      ]
+    }
+  }
+}
+

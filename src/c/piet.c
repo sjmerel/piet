@@ -172,7 +172,7 @@ static void init()
     layer_add_child(window_layer, (Layer*) g_bg_layer);
 
     // time layer
-    GFont time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_FUTURA_68));
+    GFont time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_FUTURA_64));
     GRect time_rect;
     time_rect.size.w = bounds.size.w;
     time_rect.size.h = 80;
@@ -230,7 +230,7 @@ static void init()
     tick_timer_service_subscribe(MINUTE_UNIT, &tick_timer_handler);
     bluetooth_connection_service_subscribe(bluetooth_connection_handler);
     battery_state_service_subscribe(battery_state_handler);
-    accel_service_set_sampling_rate(ACCEL_SAMPLING_25HZ);
+    accel_service_set_sampling_rate(ACCEL_SAMPLING_10HZ);
     accel_data_service_subscribe(1, accel_data_handler);
 }
 
